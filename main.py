@@ -1,11 +1,15 @@
 import random
 
+commands = ['--large-number-test', '-lnt', '--large-number-test-no-sort', '-lntns']
+
 array = []
 
 array_len = input("Enter the length that the array will be: ")
-if array_len == "--large-number-test":
+if array_len in commands:
     for i in range(0, 10000):
         array.append(random.randint(0, 10000))
+    if array_len == "large-number-test-no-sort" or array_len == "-lntns":
+        print(array)
 else:
     for i in range(0, int(array_len)):
         num = int(input("Enter a number for the array: "))
